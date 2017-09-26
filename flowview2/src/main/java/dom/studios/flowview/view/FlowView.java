@@ -164,8 +164,12 @@ public class FlowView<T> extends FrameLayout implements OnStateChangedListener {
         onStateChanged();
     }
 
-    public void dismiss(){
-        this.removeAllViews();
+    public void dismiss() {
+        for (int i = 0; i < getChildCount(); i++) getChildAt(i).setVisibility(GONE);
+    }
+
+    public void show() {
+        for (int i = 0; i < getChildCount(); i++) getChildAt(i).setVisibility(VISIBLE);
     }
 
     public void setParts(List<Part<T>> parts) {
@@ -264,6 +268,7 @@ public class FlowView<T> extends FrameLayout implements OnStateChangedListener {
 
     public interface OnFlowListener<T> {
         void onFlowComplete(T model);
+
         void onFlowCanceled();
     }
 

@@ -58,7 +58,14 @@ public class MainActivity extends AppCompatActivity implements FlowView.OnFlowLi
     }
 
     @Override
-    public void onClick(View v) {
-        mFlowView.reset();
+    public void onClick(View view) {
+        Button button = (Button) view;
+        if (button.getText().equals("Ja")) {
+            mFlowView.dismiss();
+            button.setText("Nee");
+        } else {
+            mFlowView.show();
+            button.setText("Ja");
+        }
     }
 }
