@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="horizontal">
+
+    <dom.studios.flowview.view.FlowView
+        android:id="@+id/flowView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:finalStepText="Fucking skitz mate"
+        app:nextButtonText="Proceed"
+        app:titleColor="#777777"
+        app:validatedStepColor="#F2B10C"
+        app:rejectedStepColor="#FF0808"
+        app:nextTextColor="#FF00FF"
+        app:backgroundColor="#CC000000"/>
+</LinearLayout>

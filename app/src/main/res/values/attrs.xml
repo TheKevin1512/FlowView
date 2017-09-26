@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlowView">
+        <attr name="titleColor" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+        <attr name="nextTextColor" format="color"/>
+        <attr name="validatedStepColor" format="color"/>
+        <attr name="rejectedStepColor" format="color"/>
+        <attr name="nextButtonText" format="string" />
+        <attr name="finalStepText" format="string" />
+    </declare-styleable>
+</resources>
