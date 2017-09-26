@@ -157,6 +157,10 @@ public class FlowView<T> extends FrameLayout implements OnStateChangedListener {
         replacePart();
     }
 
+    public void dismiss(){
+        this.removeAllViews();
+    }
+
     public void setParts(List<Part<T>> parts) {
         this.mParts = parts;
         replacePart();

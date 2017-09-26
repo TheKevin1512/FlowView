@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <dom.studios.flowview.view.FlowView
         android:id="@+id/flowView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="5"
         app:finalStepText="Fucking skitz mate"
         app:nextButtonText="Proceed"
         app:titleColor="#777777"
