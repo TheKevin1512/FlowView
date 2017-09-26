@@ -32,16 +32,16 @@ public class ButtonPart implements FlowView.Part<MyModel> {
         this.mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mListener != null) mListener.onStateChanged();
                 model.setButtonClicked(!model.isButtonClicked());
                 mButton.setText(model.isButtonClicked() ? "Clicked!" : "Click me mf!");
+                if (mListener != null) mListener.onStateChanged();
             }
         });
     }
 
     @Override
     public boolean isValidated() {
-        return true;
+        return mButton.getText().equals("Clicked!");
     }
 
 

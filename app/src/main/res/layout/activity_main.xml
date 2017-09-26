@@ -19,4 +19,9 @@
         app:rejectedStepColor="#FF0808"
         app:nextTextColor="#FF00FF"
         app:backgroundColor="#CC000000"/>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

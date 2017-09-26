@@ -14,9 +14,11 @@ import dom.studios.flowview.part.ButtonPart;
 import dom.studios.flowview.part.DescriptionPart;
 import dom.studios.flowview.view.FlowView;
 
-public class MainActivity extends AppCompatActivity implements FlowView.OnFlowListener<MyModel> {
+public class MainActivity extends AppCompatActivity implements FlowView.OnFlowListener<MyModel>, View.OnClickListener {
 
     private static final String TAG = "MainActivity";
+
+    private Button resetButton;
 
     private FlowView<MyModel> mFlowView;
 
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements FlowView.OnFlowLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.resetButton = (Button) findViewById(R.id.resetButton);
+        this.resetButton.setOnClickListener(this);
 
         this.mFlowView = (FlowView) findViewById(R.id.flowView);
 
@@ -50,5 +55,10 @@ public class MainActivity extends AppCompatActivity implements FlowView.OnFlowLi
     @Override
     public void onFlowCanceled() {
         Log.d(TAG, "onFlowCanceled: ");
+    }
+
+    @Override
+    public void onClick(View v) {
+        mFlowView.reset();
     }
 }

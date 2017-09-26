@@ -9,6 +9,7 @@ import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -161,6 +162,7 @@ public class FlowView<T> extends FrameLayout implements OnStateChangedListener {
 
         mCurrentPart.removeAllViews();
         replacePart();
+        onStateChanged();
     }
 
     public void dismiss(){
@@ -191,6 +193,18 @@ public class FlowView<T> extends FrameLayout implements OnStateChangedListener {
 
     public void toPrevPart() {
         updateFlow(false);
+    }
+
+    public void reset() {
+        try {
+            model = (T) model.getClass().newInstance();
+            mCurrentPartIndex = 0;
+            toPrevPart();
+        } catch (InstantiationException e) {
+            Log.e(TAG, e.getMessage(), e.getCause());
+        } catch (IllegalAccessException e) {
+            Log.e(TAG, e.getMessage(), e.getCause());
+        }
     }
 
     public T getModel() {
