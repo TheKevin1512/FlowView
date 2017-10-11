@@ -11,7 +11,6 @@
         android:id="@+id/flowView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="5"
         app:finalStepText="Fucking skitz mate"
         app:nextButtonText="Proceed"
         app:titleColor="#777777"
@@ -19,10 +18,4 @@
         app:rejectedStepColor="#FF0808"
         app:nextTextColor="#FF00FF"
         app:backgroundColor="#CC000000"/>
-
-    <Button
-        android:id="@+id/resetButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ja"/>
 </LinearLayout>

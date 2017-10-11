@@ -159,7 +159,6 @@ public class FlowView<T> extends FrameLayout implements OnStateChangedListener {
             if (mCurrentPartIndex - 1 >= 0) mCurrentPartIndex--;
             if (mCurrentPartIndex == 0) mPrevButton.setVisibility(GONE);
         }
-
         mCurrentPart.removeAllViews();
         replacePart();
         onStateChanged();

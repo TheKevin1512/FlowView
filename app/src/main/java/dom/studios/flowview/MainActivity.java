@@ -11,14 +11,13 @@ import java.util.List;
 
 import dom.studios.flowview.model.MyModel;
 import dom.studios.flowview.part.ButtonPart;
+import dom.studios.flowview.part.CategoryPart;
 import dom.studios.flowview.part.DescriptionPart;
 import dom.studios.flowview.view.FlowView;
 
-public class MainActivity extends AppCompatActivity implements FlowView.OnFlowListener<MyModel>, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements FlowView.OnFlowListener<MyModel> {
 
     private static final String TAG = "MainActivity";
-
-    private Button resetButton;
 
     private FlowView<MyModel> mFlowView;
 
@@ -26,9 +25,6 @@ public class MainActivity extends AppCompatActivity implements FlowView.OnFlowLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        this.resetButton = (Button) findViewById(R.id.resetButton);
-        this.resetButton.setOnClickListener(this);
 
         this.mFlowView = (FlowView) findViewById(R.id.flowView);
 
@@ -43,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements FlowView.OnFlowLi
         List<FlowView.Part<MyModel>> parts = new ArrayList<>();
         parts.add(new DescriptionPart(R.layout.flowpart_description));
         parts.add(new ButtonPart(R.layout.flowpart_button));
+        parts.add(new CategoryPart(R.layout.flowpart_category));
 
         this.mFlowView.setParts(parts);
     }
@@ -55,17 +52,5 @@ public class MainActivity extends AppCompatActivity implements FlowView.OnFlowLi
     @Override
     public void onFlowCanceled() {
         Log.d(TAG, "onFlowCanceled: ");
-    }
-
-    @Override
-    public void onClick(View view) {
-        Button button = (Button) view;
-        if (button.getText().equals("Ja")) {
-            mFlowView.dismiss();
-            button.setText("Nee");
-        } else {
-            mFlowView.show();
-            button.setText("Ja");
-        }
     }
 }
